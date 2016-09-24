@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>ExampleApplication.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 		<key>ShakeIT.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -18,6 +23,21 @@
 			<true/>
 		</dict>
 		<key>BFFAE6801D96E09B00313647</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>BFFAE6951D96E0AD00313647</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>BFFAE6A81D96E0AD00313647</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>BFFAE6B31D96E0AD00313647</key>
 		<dict>
 			<key>primary</key>
 			<true/>
