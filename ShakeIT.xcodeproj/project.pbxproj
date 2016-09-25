@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BFACC34E1D971CD000F20090 /* ShakeIT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFFAE6781D96E09B00313647 /* ShakeIT.framework */; };
+		BFACC34F1D971CD000F20090 /* ShakeIT.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BFFAE6781D96E09B00313647 /* ShakeIT.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		BFACC3541D97BF0500F20090 /* NoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFACC3531D97BF0500F20090 /* NoteViewController.swift */; };
 		BFFAE6821D96E09B00313647 /* ShakeIT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFFAE6781D96E09B00313647 /* ShakeIT.framework */; };
 		BFFAE6871D96E09B00313647 /* ShakeITTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFAE6861D96E09B00313647 /* ShakeITTests.swift */; };
 		BFFAE6891D96E09B00313647 /* ShakeIT.h in Headers */ = {isa = PBXBuildFile; fileRef = BFFAE67B1D96E09B00313647 /* ShakeIT.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -17,9 +20,17 @@
 		BFFAE6A31D96E0AD00313647 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFFAE6A11D96E0AD00313647 /* LaunchScreen.storyboard */; };
 		BFFAE6AE1D96E0AD00313647 /* ExampleApplicationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFAE6AD1D96E0AD00313647 /* ExampleApplicationTests.swift */; };
 		BFFAE6B91D96E0AD00313647 /* ExampleApplicationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFAE6B81D96E0AD00313647 /* ExampleApplicationUITests.swift */; };
+		BFFAE6C51D9710CA00313647 /* ShakeIT.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFAE6C41D9710CA00313647 /* ShakeIT.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		BFACC3501D971CD000F20090 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFFAE66F1D96E09A00313647 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BFFAE6771D96E09B00313647;
+			remoteInfo = ShakeIT;
+		};
 		BFFAE6831D96E09B00313647 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFFAE66F1D96E09A00313647 /* Project object */;
@@ -43,7 +54,22 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		BFACC3521D971CD100F20090 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				BFACC34F1D971CD000F20090 /* ShakeIT.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		BFACC3531D97BF0500F20090 /* NoteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteViewController.swift; sourceTree = "<group>"; };
 		BFFAE6781D96E09B00313647 /* ShakeIT.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ShakeIT.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFFAE67B1D96E09B00313647 /* ShakeIT.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShakeIT.h; sourceTree = "<group>"; };
 		BFFAE67C1D96E09B00313647 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -63,6 +89,7 @@
 		BFFAE6B41D96E0AD00313647 /* ExampleApplicationUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ExampleApplicationUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFFAE6B81D96E0AD00313647 /* ExampleApplicationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleApplicationUITests.swift; sourceTree = "<group>"; };
 		BFFAE6BA1D96E0AD00313647 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BFFAE6C41D9710CA00313647 /* ShakeIT.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShakeIT.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +112,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BFACC34E1D971CD000F20090 /* ShakeIT.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -134,6 +162,8 @@
 			children = (
 				BFFAE67B1D96E09B00313647 /* ShakeIT.h */,
 				BFFAE67C1D96E09B00313647 /* Info.plist */,
+				BFFAE6C41D9710CA00313647 /* ShakeIT.swift */,
+				BFACC3531D97BF0500F20090 /* NoteViewController.swift */,
 			);
 			path = ShakeIT;
 			sourceTree = "<group>";
@@ -235,10 +265,12 @@
 				BFFAE6921D96E0AD00313647 /* Sources */,
 				BFFAE6931D96E0AD00313647 /* Frameworks */,
 				BFFAE6941D96E0AD00313647 /* Resources */,
+				BFACC3521D971CD100F20090 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				BFACC3511D971CD000F20090 /* PBXTargetDependency */,
 			);
 			name = ExampleApplication;
 			productName = ExampleApplication;
@@ -293,6 +325,8 @@
 				TargetAttributes = {
 					BFFAE6771D96E09B00313647 = {
 						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = XY8ZXPE8XE;
+						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
 					};
 					BFFAE6801D96E09B00313647 = {
@@ -301,6 +335,7 @@
 					};
 					BFFAE6951D96E0AD00313647 = {
 						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = XY8ZXPE8XE;
 						ProvisioningStyle = Automatic;
 					};
 					BFFAE6A81D96E0AD00313647 = {
@@ -383,6 +418,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BFACC3541D97BF0500F20090 /* NoteViewController.swift in Sources */,
+				BFFAE6C51D9710CA00313647 /* ShakeIT.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -422,6 +459,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		BFACC3511D971CD000F20090 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BFFAE6771D96E09B00313647 /* ShakeIT */;
+			targetProxy = BFACC3501D971CD000F20090 /* PBXContainerItemProxy */;
+		};
 		BFFAE6841D96E09B00313647 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = BFFAE6771D96E09B00313647 /* ShakeIT */;
@@ -561,8 +603,10 @@
 		BFFAE68D1D96E09B00313647 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = XY8ZXPE8XE;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -572,6 +616,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.project.ShakeIT;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -579,8 +624,10 @@
 		BFFAE68E1D96E09B00313647 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = XY8ZXPE8XE;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -597,6 +644,7 @@
 		BFFAE6901D96E09B00313647 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = ShakeITTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.project.ShakeITTests;
@@ -608,6 +656,7 @@
 		BFFAE6911D96E09B00313647 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = ShakeITTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.project.ShakeITTests;
@@ -619,10 +668,12 @@
 		BFFAE6BC1D96E0AD00313647 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = XY8ZXPE8XE;
 				INFOPLIST_FILE = ExampleApplication/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.project.ExampleApplication;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kamilporeba.shakeit.ExampleApplication;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -631,10 +682,12 @@
 		BFFAE6BD1D96E0AD00313647 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = XY8ZXPE8XE;
 				INFOPLIST_FILE = ExampleApplication/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.project.ExampleApplication;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kamilporeba.shakeit.ExampleApplication;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -713,6 +766,7 @@
 				BFFAE68E1D96E09B00313647 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BFFAE68F1D96E09B00313647 /* Build configuration list for PBXNativeTarget "ShakeITTests" */ = {
 			isa = XCConfigurationList;
@@ -721,6 +775,7 @@
 				BFFAE6911D96E09B00313647 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BFFAE6BB1D96E0AD00313647 /* Build configuration list for PBXNativeTarget "ExampleApplication" */ = {
 			isa = XCConfigurationList;
@@ -729,6 +784,7 @@
 				BFFAE6BD1D96E0AD00313647 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BFFAE6BE1D96E0AD00313647 /* Build configuration list for PBXNativeTarget "ExampleApplicationTests" */ = {
 			isa = XCConfigurationList;
@@ -737,6 +793,7 @@
 				BFFAE6C01D96E0AD00313647 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BFFAE6C11D96E0AD00313647 /* Build configuration list for PBXNativeTarget "ExampleApplicationUITests" */ = {
 			isa = XCConfigurationList;
@@ -745,6 +802,7 @@
 				BFFAE6C31D96E0AD00313647 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
