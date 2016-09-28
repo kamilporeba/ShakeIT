@@ -64,7 +64,7 @@ class NoteViewController: UIViewController
     {
         for _ in 1...3 {
             let buttonMenu = MenuButton(frame:CGRect(x:self.menuButton.frame.minX,y:self.view.frame.height,width:70,height:70))
-            buttonMenu.backgroundColor = UIColor.green
+            buttonMenu.backgroundColor = UIColor.white
             buttonsMenu.append(buttonMenu)
         }
     }
@@ -73,15 +73,12 @@ class NoteViewController: UIViewController
     {
         UIView.animate(withDuration: 1.0, delay: 0.0, usingSpringWithDamping: 0.3, initialSpringVelocity: 0.5, options: .curveLinear, animations: {
                 for (index,button) in self.buttonsMenu.enumerated() {
-                    button.frame = CGRect(x:self.menuButton.frame.minX,y:CGFloat(self.menuButton.frame.minY - CGFloat(75) * CGFloat(index + 1)),width:70,height:70)
+                    button.frame = CGRect(x:self.menuButton.frame.minX,y:CGFloat(self.menuButton.frame.minY - CGFloat(80) * CGFloat(index + 1)),width:70,height:70)
                     self.view.addSubview(button)
-                    self.buttonsMenu.remove(at: index)
-                    self.buttonsMenu.insert(button, at: index)
+                    self.changeObjectsInButtonsMenu(object: button as! MenuButton, at: index)
                 }
-            }) { (success) in
-                self.menuButton.removeTarget(self, action: #selector(NoteViewController.showMenuButtons), for: .touchDown)
-                self.menuButton.addTarget(self, action: #selector(NoteViewController.hideMenuButtons), for: .touchDown)
-                
+        }) { (success) in
+            self.changeMenuButtonAction(newAction: #selector(NoteViewController.hideMenuButtons), oldAction: #selector(NoteViewController.showMenuButtons))
         }
     }
     
@@ -91,15 +88,26 @@ class NoteViewController: UIViewController
             
             for (index,button) in self.buttonsMenu.enumerated() {
                 button.frame = CGRect(x:self.menuButton.frame.minX,y:self.view.frame.height,width:70,height:70)
-                self.buttonsMenu.remove(at: index)
-                self.buttonsMenu.insert(button, at: index)
+                self.changeObjectsInButtonsMenu(object: button as! MenuButton, at: index)
             }
             
         }) { (success) in
-            self.menuButton.removeTarget(self, action: #selector(NoteViewController.hideMenuButtons), for: .touchDown)
-            self.menuButton.addTarget(self, action: #selector(NoteViewController.showMenuButtons), for: .touchDown)
+            self.changeMenuButtonAction(newAction: #selector(NoteViewController.showMenuButtons), oldAction: #selector(NoteViewController.hideMenuButtons))
         }
         
+    }
+    
+    func changeMenuButtonAction(newAction: Selector, oldAction: Selector)
+    {
+        self.menuButton.removeTarget(self, action: oldAction, for: .touchDown)
+        self.menuButton.addTarget(self, action: newAction, for: .touchDown)
+    }
+    
+    func changeObjectsInButtonsMenu(object: MenuButton, at index: Int)
+    {
+        self.buttonsMenu.remove(at: index)
+        self.buttonsMenu.insert(object, at: index)
+
     }
     
     
