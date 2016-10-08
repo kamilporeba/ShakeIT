@@ -14,14 +14,14 @@ enum MenuButtonType : String
     case edit
     case mail
     case save
-    case custom
+    case menu
 }
 
 class MenuButtonsFactory
 {
-    class func createMenuButton(type:MenuButtonType, actionBlock: @escaping (MenuButtonType) -> Void) -> MenuButton
+    class func createMenuButton(type:MenuButtonType, actionBlock: @escaping () -> Void) -> MenuButton
     {
-        let menuButton : MenuButton = MenuButton.init(typeButton: .edit,actionBlock: actionBlock)
+        let menuButton: MenuButton = MenuButton.init(typeButton: type,actionBlock: actionBlock)
 
         return menuButton
     }
