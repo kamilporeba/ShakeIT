@@ -21,6 +21,7 @@ class NoteViewController: UIViewController
         }
         
         let menu = MenuButtonsFactory.createMenuButton(type: .menu, actionBlock: menuBlock)
+        menu.addVisualConstraintFormat(vertical: "V:[button(==70)]-20-|", horizontal: "H:[button(==70)]")
         menu.backgroundColor = UIColor.orange
         menu.setTitle("MENU", for: .normal)
         return menu

@@ -14,6 +14,10 @@ class MenuButton: UIButton
     var type: MenuButtonType!
     var blockAction: (() -> Void)!
     
+    var horizonatalFormat = String()
+    var verticalFormat = String()
+    
+    
     init(typeButton: MenuButtonType, actionBlock: @escaping () -> Void)
     {
         blockAction = actionBlock
@@ -21,6 +25,12 @@ class MenuButton: UIButton
         super.init(frame: CGRect(x:0,y:0,width:0,height:0))
         self.addTarget(self, action: #selector(MenuButton.buttonTapped), for: .touchDown)
         self.translatesAutoresizingMaskIntoConstraints = false
+    }
+    
+    func addVisualConstraintFormat(vertical:String, horizontal:String)
+    {
+        verticalFormat = vertical
+        horizonatalFormat = horizontal
     }
     
     required init?(coder aDecoder: NSCoder)
@@ -36,6 +46,7 @@ class MenuButton: UIButton
         setConstraintOnMenuButton()
     }
     
+    
     @objc private func buttonTapped ()
     {
         self.transform = CGAffineTransform(scaleX:0.8, y:0.8)
@@ -44,13 +55,13 @@ class MenuButton: UIButton
         }
         blockAction()
     }
-    
+
     private func setConstraintOnMenuButton()
     {
         let views: [String:UIView] = ["button": self]
         
-        let rightAligment = NSLayoutConstraint.constraints(withVisualFormat: "V:[button(==70)]-20-|", options: [], metrics: nil, views: views)
-        let bottomAligment = NSLayoutConstraint.constraints(withVisualFormat: "H:[button(==70)]", options: [], metrics: nil, views: views)
+        let rightAligment = NSLayoutConstraint.constraints(withVisualFormat: verticalFormat, options: [], metrics: nil, views: views)
+        let bottomAligment = NSLayoutConstraint.constraints(withVisualFormat: horizonatalFormat, options: [], metrics: nil, views: views)
         allConstraints += bottomAligment
         allConstraints += rightAligment
         NSLayoutConstraint.activate(allConstraints)
