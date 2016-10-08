@@ -10,15 +10,17 @@ import Foundation
 
 class MenuButton: UIButton
 {
+    var allConstraints = [NSLayoutConstraint]()
     var type: MenuButtonType!
-    var blockAction: ((MenuButtonType) -> Void)!
+    var blockAction: (() -> Void)!
     
-    init(typeButton: MenuButtonType, actionBlock: @escaping (MenuButtonType) -> Void)
+    init(typeButton: MenuButtonType, actionBlock: @escaping () -> Void)
     {
-        super.init(frame: CGRect(x:0,y:0,width:0,height:0))
         blockAction = actionBlock
         type = typeButton
+        super.init(frame: CGRect(x:0,y:0,width:0,height:0))
         self.addTarget(self, action: #selector(MenuButton.buttonTapped), for: .touchDown)
+        self.translatesAutoresizingMaskIntoConstraints = false
     }
     
     required init?(coder aDecoder: NSCoder)
@@ -26,15 +28,32 @@ class MenuButton: UIButton
         super.init(coder: aDecoder)
     }
     
-    @objc private func buttonTapped ()
+    override func layoutSubviews()
     {
-        blockAction(type)
+        super.layoutSubviews()
+        self.layer.cornerRadius = self.frame.width/2
+        self.centerXAnchor.constraint(equalTo: (self.superview?.centerXAnchor)!).isActive = true
+        setConstraintOnMenuButton()
     }
     
-    private func setup()
+    @objc private func buttonTapped ()
     {
-        self.layer.cornerRadius = self.frame.width/2
-        self.clipsToBounds = true
+        self.transform = CGAffineTransform(scaleX:0.8, y:0.8)
+        UIView.animate(withDuration: 0.3) {
+            self.transform = CGAffineTransform(scaleX: 1,y:1)
+        }
+        blockAction()
+    }
+    
+    private func setConstraintOnMenuButton()
+    {
+        let views: [String:UIView] = ["button": self]
+        
+        let rightAligment = NSLayoutConstraint.constraints(withVisualFormat: "V:[button(==70)]-20-|", options: [], metrics: nil, views: views)
+        let bottomAligment = NSLayoutConstraint.constraints(withVisualFormat: "H:[button(==70)]", options: [], metrics: nil, views: views)
+        allConstraints += bottomAligment
+        allConstraints += rightAligment
+        NSLayoutConstraint.activate(allConstraints)
     }
     
 }
