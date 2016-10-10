@@ -8,37 +8,20 @@
 
 import Foundation
 import UIKit
-import CoreMotion
+
 
 public class ShakeIT {
     
     let emailAddress: String!
-    let motionManager = CMMotionManager()
-    let operations = OperationQueue()
-    let alertWindow = UIWindow(frame: UIScreen.main.bounds)
-    var shouldShow = true
+    private let alertWindow = UIWindow(frame: UIScreen.main.bounds)
+    private var shouldShow = true
     
     public init(emailAddress: String) {
         self.emailAddress = emailAddress
     }
     
     private func  startHandleDeviceMotion()  {
-        setDeviceMotionUpdateActionAndInterval()        
-    }
-    
-    private func setDeviceMotionUpdateActionAndInterval()  {
-        motionManager.deviceMotionUpdateInterval = 0.02
-        motionManager.startDeviceMotionUpdates(to: operations, withHandler: { (deviceMotion, error) in
-            guard deviceMotion != nil else {
-                print(error.debugDescription)
-                return
-            }
-            self.handleShake(deviceMotion: deviceMotion!)
-        })
-    }
-    
-    private func handleShake(deviceMotion: CMDeviceMotion)  {
-        if deviceMotion.userAcceleration.x < -2.5 {
+        MotionHandler.shared.setDeviceMotionUpdateActionAndInterval { 
             guard self.shouldShow else {
                 return
             }
@@ -66,7 +49,7 @@ public class ShakeIT {
     }
     
     public func stop() {
-        self.motionManager.stopDeviceMotionUpdates()
+        MotionHandler.shared.stopHandleMotion()
     }
 
 }
