@@ -22,7 +22,6 @@ class NoteViewController: UIViewController
         menu.translatesAutoresizingMaskIntoConstraints = false
         menu.centerXAnchor.constraint(equalTo:self.view.centerXAnchor).isActive = true
         menu.backgroundColor = UIColor.orange
-        menu.setTitle("Menu", for: .normal)
         menu.setTitleColor(UIColor.white, for: .normal)
         return menu
     }()
@@ -62,7 +61,23 @@ class NoteViewController: UIViewController
             }
             
         }) { (success) in
-           
+            self.menuButton.blockAction = {
+                self.hideMenuButtons()
+            }
+        }
+    }
+    
+    func hideMenuButtons()
+    {
+        UIView.animate(withDuration: 1.0, delay: 0.0, usingSpringWithDamping: 0.3, initialSpringVelocity: 0.5, options: .curveLinear, animations: {
+            for button in self.buttonsMenu {
+                button.frame.origin = CGPoint(x:self.menuButton.frame.minX, y:self.bottomSpace())
+            }
+            
+        }) { (success) in
+            self.menuButton.blockAction = {
+                self.showMenuButtons()
+            }
         }
     }
     
@@ -85,7 +100,6 @@ class NoteViewController: UIViewController
         
         mailButton = MenuButtonsFactory.createMenuButton(forSuperview: self.view, type: .mail, actionBlock: mailBlock)
         mailButton.frame.origin = CGPoint(x:self.menuButton.frame.minX, y:bottomSpace())
-        mailButton.setTitle("Mail", for: .normal)
         self.view.addSubview(mailButton)
         buttonsMenu.append(mailButton)
     }
@@ -95,9 +109,8 @@ class NoteViewController: UIViewController
         let editBlock = { () -> Void in
             
         }
-        editButton = MenuButtonsFactory.createMenuButton(forSuperview: self.view, type: .mail, actionBlock: editBlock)
+        editButton = MenuButtonsFactory.createMenuButton(forSuperview: self.view, type: .edit, actionBlock: editBlock)
         editButton.frame.origin = CGPoint(x:self.menuButton.frame.minX, y:bottomSpace())
-        editButton.setTitle("Edit", for: .normal)
         self.view.addSubview(editButton)
         buttonsMenu.append(editButton)
     }
@@ -107,9 +120,8 @@ class NoteViewController: UIViewController
         let saveBlock = { () -> Void in
             
         }
-        saveButton = MenuButtonsFactory.createMenuButton(forSuperview: self.view, type: .mail, actionBlock: saveBlock)
+        saveButton = MenuButtonsFactory.createMenuButton(forSuperview: self.view, type: .save, actionBlock: saveBlock)
         saveButton.frame.origin = CGPoint(x:self.menuButton.frame.minX, y:bottomSpace())
-        saveButton.setTitle("Save", for: .normal)
         self.view.addSubview(saveButton)
         buttonsMenu.append(saveButton)
     }

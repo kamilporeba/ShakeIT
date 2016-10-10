@@ -11,7 +11,7 @@ import Foundation
 class MenuButton: UIButton
 {
     private var type: MenuButtonType!
-    private var blockAction: (() -> Void)!
+    var blockAction: (() -> Void)!
     
     
     var bottomSpace = NSLayoutConstraint()
@@ -26,6 +26,7 @@ class MenuButton: UIButton
         self.backgroundColor = UIColor.white
         self.addTarget(self, action: #selector(MenuButton.buttonTapped), for: .touchDown)
         self.setTitleColor(UIColor.black, for: .normal)
+        setTitleForType(type: typeButton)
     }
     
     
@@ -48,6 +49,30 @@ class MenuButton: UIButton
             self.transform = CGAffineTransform(scaleX: 1,y:1)
         }
         blockAction()
+    }
+    
+    func setTitleForType(type: MenuButtonType)
+    {
+        var title : String
+        
+        switch type {
+        case .edit:
+            title = "Edit"
+            
+        case .mail:
+            title = "Mail"
+            
+        case .menu:
+            title = "Menu"
+            
+        case .save:
+            title = "Save"
+            
+        default:
+            title = ""
+        }
+        
+        self.setTitle(title, for: .normal)
     }
 
     
