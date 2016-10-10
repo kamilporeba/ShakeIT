@@ -19,9 +19,10 @@ enum MenuButtonType : String
 
 class MenuButtonsFactory
 {
-    class func createMenuButton(type:MenuButtonType, actionBlock: @escaping () -> Void) -> MenuButton
+    class func createMenuButton(forSuperview:UIView, type:MenuButtonType, actionBlock: @escaping () -> Void) -> MenuButton
     {
         let menuButton: MenuButton = MenuButton.init(typeButton: type,actionBlock: actionBlock)
+        forSuperview.addSubview(menuButton)
 
         return menuButton
     }

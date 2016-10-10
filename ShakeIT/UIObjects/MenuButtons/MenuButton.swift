@@ -10,28 +10,24 @@ import Foundation
 
 class MenuButton: UIButton
 {
-    var allConstraints = [NSLayoutConstraint]()
-    var type: MenuButtonType!
-    var blockAction: (() -> Void)!
+    private var type: MenuButtonType!
+    private var blockAction: (() -> Void)!
     
-    var horizonatalFormat = String()
-    var verticalFormat = String()
+    
+    var bottomSpace = NSLayoutConstraint()
     
     
     init(typeButton: MenuButtonType, actionBlock: @escaping () -> Void)
     {
         blockAction = actionBlock
         type = typeButton
-        super.init(frame: CGRect(x:0,y:0,width:0,height:0))
+        super.init(frame: CGRect(x:0,y:0,width:70,height:70))
+        
+        self.backgroundColor = UIColor.white
         self.addTarget(self, action: #selector(MenuButton.buttonTapped), for: .touchDown)
-        self.translatesAutoresizingMaskIntoConstraints = false
+        self.setTitleColor(UIColor.black, for: .normal)
     }
     
-    func addVisualConstraintFormat(vertical:String, horizontal:String)
-    {
-        verticalFormat = vertical
-        horizonatalFormat = horizontal
-    }
     
     required init?(coder aDecoder: NSCoder)
     {
@@ -42,8 +38,6 @@ class MenuButton: UIButton
     {
         super.layoutSubviews()
         self.layer.cornerRadius = self.frame.width/2
-        self.centerXAnchor.constraint(equalTo: (self.superview?.centerXAnchor)!).isActive = true
-        setConstraintOnMenuButton()
     }
     
     
@@ -56,15 +50,5 @@ class MenuButton: UIButton
         blockAction()
     }
 
-    private func setConstraintOnMenuButton()
-    {
-        let views: [String:UIView] = ["button": self]
-        
-        let rightAligment = NSLayoutConstraint.constraints(withVisualFormat: verticalFormat, options: [], metrics: nil, views: views)
-        let bottomAligment = NSLayoutConstraint.constraints(withVisualFormat: horizonatalFormat, options: [], metrics: nil, views: views)
-        allConstraints += bottomAligment
-        allConstraints += rightAligment
-        NSLayoutConstraint.activate(allConstraints)
-    }
     
 }
