@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		45164B891D9A3877007D0AD9 /* MenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45164B881D9A3877007D0AD9 /* MenuButton.swift */; };
+		45164B8A1D9A3877007D0AD9 /* MenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45164B881D9A3877007D0AD9 /* MenuButton.swift */; };
+		457249581D9C634C008FEE6F /* MenuButtonsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457249571D9C634C008FEE6F /* MenuButtonsFactory.swift */; };
+		457249591D9C634C008FEE6F /* MenuButtonsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457249571D9C634C008FEE6F /* MenuButtonsFactory.swift */; };
 		BFACC34E1D971CD000F20090 /* ShakeIT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFFAE6781D96E09B00313647 /* ShakeIT.framework */; };
 		BFACC34F1D971CD000F20090 /* ShakeIT.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BFFAE6781D96E09B00313647 /* ShakeIT.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BFACC3541D97BF0500F20090 /* NoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFACC3531D97BF0500F20090 /* NoteViewController.swift */; };
@@ -69,6 +73,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		45164B881D9A3877007D0AD9 /* MenuButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuButton.swift; sourceTree = "<group>"; };
+		457249571D9C634C008FEE6F /* MenuButtonsFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuButtonsFactory.swift; sourceTree = "<group>"; };
 		BFACC3531D97BF0500F20090 /* NoteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteViewController.swift; sourceTree = "<group>"; };
 		BFFAE6781D96E09B00313647 /* ShakeIT.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ShakeIT.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFFAE67B1D96E09B00313647 /* ShakeIT.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShakeIT.h; sourceTree = "<group>"; };
@@ -133,6 +139,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		45164B871D9A3867007D0AD9 /* UIObjects */ = {
+			isa = PBXGroup;
+			children = (
+				457249561D9C6337008FEE6F /* MenuButtons */,
+			);
+			path = UIObjects;
+			sourceTree = "<group>";
+		};
+		457249561D9C6337008FEE6F /* MenuButtons */ = {
+			isa = PBXGroup;
+			children = (
+				457249571D9C634C008FEE6F /* MenuButtonsFactory.swift */,
+				45164B881D9A3877007D0AD9 /* MenuButton.swift */,
+			);
+			path = MenuButtons;
+			sourceTree = "<group>";
+		};
 		BFFAE66E1D96E09A00313647 = {
 			isa = PBXGroup;
 			children = (
@@ -160,6 +183,7 @@
 		BFFAE67A1D96E09B00313647 /* ShakeIT */ = {
 			isa = PBXGroup;
 			children = (
+				45164B871D9A3867007D0AD9 /* UIObjects */,
 				BFFAE67B1D96E09B00313647 /* ShakeIT.h */,
 				BFFAE67C1D96E09B00313647 /* Info.plist */,
 				BFFAE6C41D9710CA00313647 /* ShakeIT.swift */,
@@ -335,7 +359,7 @@
 					};
 					BFFAE6951D96E0AD00313647 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = XY8ZXPE8XE;
+						DevelopmentTeam = D77EL94EMV;
 						ProvisioningStyle = Automatic;
 					};
 					BFFAE6A81D96E0AD00313647 = {
@@ -420,6 +444,8 @@
 			files = (
 				BFACC3541D97BF0500F20090 /* NoteViewController.swift in Sources */,
 				BFFAE6C51D9710CA00313647 /* ShakeIT.swift in Sources */,
+				45164B891D9A3877007D0AD9 /* MenuButton.swift in Sources */,
+				457249581D9C634C008FEE6F /* MenuButtonsFactory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -427,7 +453,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45164B8A1D9A3877007D0AD9 /* MenuButton.swift in Sources */,
 				BFFAE6871D96E09B00313647 /* ShakeITTests.swift in Sources */,
+				457249591D9C634C008FEE6F /* MenuButtonsFactory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -670,10 +698,10 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = XY8ZXPE8XE;
+				DEVELOPMENT_TEAM = D77EL94EMV;
 				INFOPLIST_FILE = ExampleApplication/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.kamilporeba.shakeit.ExampleApplication;
+				PRODUCT_BUNDLE_IDENTIFIER = com.project.ExampleApplication;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -684,10 +712,10 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = XY8ZXPE8XE;
+				DEVELOPMENT_TEAM = D77EL94EMV;
 				INFOPLIST_FILE = ExampleApplication/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.kamilporeba.shakeit.ExampleApplication;
+				PRODUCT_BUNDLE_IDENTIFIER = com.project.ExampleApplication;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
