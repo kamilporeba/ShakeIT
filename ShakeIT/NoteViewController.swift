@@ -35,7 +35,7 @@ class NoteViewController: UIViewController {
         menuButton.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(menuButton)
     }
-    
+
     private func setConstraintOnMenuButton()  {
         let views: [String:UIView] = ["button": menuButton]
 
