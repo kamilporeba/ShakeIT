@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		45DB9AD71DB00EFC00DA571C /* LineDrawer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DB9AD61DB00EFC00DA571C /* LineDrawer.swift */; };
 		45DB9AD81DB00EFC00DA571C /* LineDrawer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DB9AD61DB00EFC00DA571C /* LineDrawer.swift */; };
+		BFAB5A941DA2D32300274BB5 /* MotionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAB5A931DA2D32300274BB5 /* MotionHandler.swift */; };
 		BFACC34E1D971CD000F20090 /* ShakeIT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFFAE6781D96E09B00313647 /* ShakeIT.framework */; };
 		BFACC34F1D971CD000F20090 /* ShakeIT.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BFFAE6781D96E09B00313647 /* ShakeIT.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BFACC3541D97BF0500F20090 /* NoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFACC3531D97BF0500F20090 /* NoteViewController.swift */; };
@@ -72,6 +73,7 @@
 
 /* Begin PBXFileReference section */
 		45DB9AD61DB00EFC00DA571C /* LineDrawer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineDrawer.swift; sourceTree = "<group>"; };
+		BFAB5A931DA2D32300274BB5 /* MotionHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MotionHandler.swift; path = Utils/Motion/MotionHandler.swift; sourceTree = "<group>"; };
 		BFACC3531D97BF0500F20090 /* NoteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteViewController.swift; sourceTree = "<group>"; };
 		BFFAE6781D96E09B00313647 /* ShakeIT.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ShakeIT.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFFAE67B1D96E09B00313647 /* ShakeIT.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShakeIT.h; sourceTree = "<group>"; };
@@ -136,6 +138,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BFAB5A911DA2D30400274BB5 /* Utlis */ = {
+			isa = PBXGroup;
+			children = (
+				BFAB5A921DA2D30A00274BB5 /* Motion */,
+			);
+			name = Utlis;
+			sourceTree = "<group>";
+		};
+		BFAB5A921DA2D30A00274BB5 /* Motion */ = {
+			isa = PBXGroup;
+			children = (
+				BFAB5A931DA2D32300274BB5 /* MotionHandler.swift */,
+			);
+			name = Motion;
+			sourceTree = "<group>";
+		};
 		BFFAE66E1D96E09A00313647 = {
 			isa = PBXGroup;
 			children = (
@@ -163,6 +181,7 @@
 		BFFAE67A1D96E09B00313647 /* ShakeIT */ = {
 			isa = PBXGroup;
 			children = (
+				BFAB5A911DA2D30400274BB5 /* Utlis */,
 				BFFAE67B1D96E09B00313647 /* ShakeIT.h */,
 				BFFAE67C1D96E09B00313647 /* Info.plist */,
 				BFFAE6C41D9710CA00313647 /* ShakeIT.swift */,
@@ -422,6 +441,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BFAB5A941DA2D32300274BB5 /* MotionHandler.swift in Sources */,
 				BFACC3541D97BF0500F20090 /* NoteViewController.swift in Sources */,
 				BFFAE6C51D9710CA00313647 /* ShakeIT.swift in Sources */,
 				45DB9AD71DB00EFC00DA571C /* LineDrawer.swift in Sources */,
