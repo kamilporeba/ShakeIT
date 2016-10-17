@@ -10,6 +10,7 @@ import UIKit
 
 class NoteViewController: UIViewController
 {
+    
     var allConstraints = [NSLayoutConstraint]()
     var buttonsMenu = [MenuButton]()
     
@@ -50,7 +51,17 @@ class NoteViewController: UIViewController
         self.view.backgroundColor = UIColor(colorLiteralRed: 0, green: 0, blue: 0, alpha: 0.5)
     }
     
+    private func setConstraintForMenuButton()
+    {
+        let views: [String:UIView] = ["menuButton": menuButton]
+        let rightAligment = NSLayoutConstraint.constraints(withVisualFormat: "V:[menuButton(==70)]-20-|", options: [], metrics: nil, views: views)
+        let bottomAligment = NSLayoutConstraint.constraints(withVisualFormat: "H:[menuButton(==70)]", options: [], metrics: nil, views: views)
+        allConstraints += bottomAligment
+        allConstraints += rightAligment
+        NSLayoutConstraint.activate(allConstraints)
+    }
     
+    //MARK: - Animations
     func showMenuButtons()
     {
         UIView.animate(withDuration: 1.0, delay: 0.0, usingSpringWithDamping: 0.3, initialSpringVelocity: 0.5, options: .curveLinear, animations: {
@@ -79,16 +90,6 @@ class NoteViewController: UIViewController
                 self.showMenuButtons()
             }
         }
-    }
-    
-    private func setConstraintForMenuButton()
-    {
-        let views: [String:UIView] = ["menuButton": menuButton]
-        let rightAligment = NSLayoutConstraint.constraints(withVisualFormat: "V:[menuButton(==70)]-20-|", options: [], metrics: nil, views: views)
-        let bottomAligment = NSLayoutConstraint.constraints(withVisualFormat: "H:[menuButton(==70)]", options: [], metrics: nil, views: views)
-        allConstraints += bottomAligment
-        allConstraints += rightAligment
-        NSLayoutConstraint.activate(allConstraints)
     }
     
     //MARK: - setup menu buttons
@@ -138,7 +139,7 @@ class NoteViewController: UIViewController
         view!.layer.render(in: UIGraphicsGetCurrentContext()!)
         let image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
-        // UIImageWriteToSavedPhotosAlbum(image!, nil, nil, nil)
+         UIImageWriteToSavedPhotosAlbum(image!, nil, nil, nil)
     }
-    
+
 }
