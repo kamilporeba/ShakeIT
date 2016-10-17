@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		45DB9AD71DB00EFC00DA571C /* LineDrawer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DB9AD61DB00EFC00DA571C /* LineDrawer.swift */; };
-		45DB9AD81DB00EFC00DA571C /* LineDrawer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DB9AD61DB00EFC00DA571C /* LineDrawer.swift */; };
+		45CE3D251DB5671800395991 /* LineDrawer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CE3D241DB5671800395991 /* LineDrawer.swift */; };
+		45CE3D261DB5671800395991 /* LineDrawer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CE3D241DB5671800395991 /* LineDrawer.swift */; };
 		BFAB5A941DA2D32300274BB5 /* MotionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAB5A931DA2D32300274BB5 /* MotionHandler.swift */; };
 		BFACC34E1D971CD000F20090 /* ShakeIT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFFAE6781D96E09B00313647 /* ShakeIT.framework */; };
 		BFACC34F1D971CD000F20090 /* ShakeIT.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BFFAE6781D96E09B00313647 /* ShakeIT.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -72,7 +72,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		45DB9AD61DB00EFC00DA571C /* LineDrawer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineDrawer.swift; sourceTree = "<group>"; };
+		45CE3D241DB5671800395991 /* LineDrawer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineDrawer.swift; sourceTree = "<group>"; };
 		BFAB5A931DA2D32300274BB5 /* MotionHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MotionHandler.swift; path = Utils/Motion/MotionHandler.swift; sourceTree = "<group>"; };
 		BFACC3531D97BF0500F20090 /* NoteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteViewController.swift; sourceTree = "<group>"; };
 		BFFAE6781D96E09B00313647 /* ShakeIT.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ShakeIT.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -138,6 +138,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		45CE3D231DB5671800395991 /* Drawing */ = {
+			isa = PBXGroup;
+			children = (
+				45CE3D241DB5671800395991 /* LineDrawer.swift */,
+			);
+			path = Drawing;
+			sourceTree = "<group>";
+		};
 		BFAB5A911DA2D30400274BB5 /* Utlis */ = {
 			isa = PBXGroup;
 			children = (
@@ -181,12 +189,12 @@
 		BFFAE67A1D96E09B00313647 /* ShakeIT */ = {
 			isa = PBXGroup;
 			children = (
+				45CE3D231DB5671800395991 /* Drawing */,
 				BFAB5A911DA2D30400274BB5 /* Utlis */,
 				BFFAE67B1D96E09B00313647 /* ShakeIT.h */,
 				BFFAE67C1D96E09B00313647 /* Info.plist */,
 				BFFAE6C41D9710CA00313647 /* ShakeIT.swift */,
 				BFACC3531D97BF0500F20090 /* NoteViewController.swift */,
-				45DB9AD61DB00EFC00DA571C /* LineDrawer.swift */,
 			);
 			path = ShakeIT;
 			sourceTree = "<group>";
@@ -444,7 +452,7 @@
 				BFAB5A941DA2D32300274BB5 /* MotionHandler.swift in Sources */,
 				BFACC3541D97BF0500F20090 /* NoteViewController.swift in Sources */,
 				BFFAE6C51D9710CA00313647 /* ShakeIT.swift in Sources */,
-				45DB9AD71DB00EFC00DA571C /* LineDrawer.swift in Sources */,
+				45CE3D251DB5671800395991 /* LineDrawer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -452,7 +460,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				45DB9AD81DB00EFC00DA571C /* LineDrawer.swift in Sources */,
+				45CE3D261DB5671800395991 /* LineDrawer.swift in Sources */,
 				BFFAE6871D96E09B00313647 /* ShakeITTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
