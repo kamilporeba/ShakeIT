@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		45CE3D1F1DB566FA00395991 /* MenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CE3D1D1DB566FA00395991 /* MenuButton.swift */; };
+		45CE3D201DB566FA00395991 /* MenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CE3D1D1DB566FA00395991 /* MenuButton.swift */; };
+		45CE3D211DB566FA00395991 /* MenuButtonsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CE3D1E1DB566FA00395991 /* MenuButtonsFactory.swift */; };
+		45CE3D221DB566FA00395991 /* MenuButtonsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CE3D1E1DB566FA00395991 /* MenuButtonsFactory.swift */; };
 		45CE3D251DB5671800395991 /* LineDrawer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CE3D241DB5671800395991 /* LineDrawer.swift */; };
 		45CE3D261DB5671800395991 /* LineDrawer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CE3D241DB5671800395991 /* LineDrawer.swift */; };
 		BFAB5A941DA2D32300274BB5 /* MotionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAB5A931DA2D32300274BB5 /* MotionHandler.swift */; };
@@ -72,6 +76,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		45CE3D1D1DB566FA00395991 /* MenuButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuButton.swift; sourceTree = "<group>"; };
+		45CE3D1E1DB566FA00395991 /* MenuButtonsFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuButtonsFactory.swift; sourceTree = "<group>"; };
 		45CE3D241DB5671800395991 /* LineDrawer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineDrawer.swift; sourceTree = "<group>"; };
 		BFAB5A931DA2D32300274BB5 /* MotionHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MotionHandler.swift; path = Utils/Motion/MotionHandler.swift; sourceTree = "<group>"; };
 		BFACC3531D97BF0500F20090 /* NoteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteViewController.swift; sourceTree = "<group>"; };
@@ -138,6 +144,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		45CE3D1B1DB566FA00395991 /* UIObjects */ = {
+			isa = PBXGroup;
+			children = (
+				45CE3D1C1DB566FA00395991 /* MenuButtons */,
+			);
+			path = UIObjects;
+			sourceTree = "<group>";
+		};
+		45CE3D1C1DB566FA00395991 /* MenuButtons */ = {
+			isa = PBXGroup;
+			children = (
+				45CE3D1D1DB566FA00395991 /* MenuButton.swift */,
+				45CE3D1E1DB566FA00395991 /* MenuButtonsFactory.swift */,
+			);
+			path = MenuButtons;
+			sourceTree = "<group>";
+		};
 		45CE3D231DB5671800395991 /* Drawing */ = {
 			isa = PBXGroup;
 			children = (
@@ -190,6 +213,7 @@
 			isa = PBXGroup;
 			children = (
 				45CE3D231DB5671800395991 /* Drawing */,
+				45CE3D1B1DB566FA00395991 /* UIObjects */,
 				BFAB5A911DA2D30400274BB5 /* Utlis */,
 				BFFAE67B1D96E09B00313647 /* ShakeIT.h */,
 				BFFAE67C1D96E09B00313647 /* Info.plist */,
@@ -451,8 +475,10 @@
 			files = (
 				BFAB5A941DA2D32300274BB5 /* MotionHandler.swift in Sources */,
 				BFACC3541D97BF0500F20090 /* NoteViewController.swift in Sources */,
+				45CE3D1F1DB566FA00395991 /* MenuButton.swift in Sources */,
 				BFFAE6C51D9710CA00313647 /* ShakeIT.swift in Sources */,
 				45CE3D251DB5671800395991 /* LineDrawer.swift in Sources */,
+				45CE3D211DB566FA00395991 /* MenuButtonsFactory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -462,6 +488,8 @@
 			files = (
 				45CE3D261DB5671800395991 /* LineDrawer.swift in Sources */,
 				BFFAE6871D96E09B00313647 /* ShakeITTests.swift in Sources */,
+				45CE3D201DB566FA00395991 /* MenuButton.swift in Sources */,
+				45CE3D221DB566FA00395991 /* MenuButtonsFactory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
