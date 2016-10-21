@@ -12,28 +12,32 @@ import MessageUI
 class MailComposer: NSObject, MFMailComposeViewControllerDelegate
 {
     var mailComposer = MFMailComposeViewController()
+    var actualViewController:UIViewController?
     
-    override init()
+    
+    convenience init(viewController:UIViewController)
     {
-        super.init()
-        
+        self.init()
+        actualViewController = viewController
         mailComposer.mailComposeDelegate = self
     }
     
-    func showMailFor(viewController:UIViewController)
+    func showMail()
     {
         if MFMailComposeViewController.canSendMail() {
-            viewController.present(mailComposer, animated: true, completion: nil)
+            actualViewController!.present(mailComposer, animated: true, completion: nil)
+            return
         }
         let alert = UIAlertController(title: "Sorry,", message: "At this moment you can't send email.\n Try later.", preferredStyle: .alert)
         alert.addAction(UIAlertAction.init(title: "Ok", style: .cancel, handler: nil))
-        viewController.present(alert, animated: true, completion:nil)
+        actualViewController!.present(alert, animated: true, completion:nil)
     }
     
     func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?)
     {
-        
+        if result.rawValue == 0 {
+            actualViewController?.dismiss(animated: true, completion: nil)
+        }
     }
-    
     
 }
