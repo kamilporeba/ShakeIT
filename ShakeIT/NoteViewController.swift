@@ -13,6 +13,8 @@ class NoteViewController: UIViewController
     
     var allConstraints = [NSLayoutConstraint]()
     var buttonsMenu = [MenuButton]()
+    var mailComposer:MailComposer? = nil
+    
     
     lazy var menuButton: MenuButton = {
         let menuBlock = { () -> Void in
@@ -38,6 +40,7 @@ class NoteViewController: UIViewController
         super.viewWillAppear(animated)
         setBlackBackgroundWithOpacity()
         setConstraintForMenuButton()
+        mailComposer = MailComposer(viewController: self)
     }
     
     override func viewDidAppear(_ animated: Bool)
@@ -110,7 +113,7 @@ class NoteViewController: UIViewController
     func setupMailButton()
     {
         let mailBlock = { () -> Void in
-            
+            self.mailComposer?.showMail()
         }
         
         mailButton = MenuButtonsFactory.createMenuButton(forSuperview: self.view, type: .mail, actionBlock: mailBlock)
