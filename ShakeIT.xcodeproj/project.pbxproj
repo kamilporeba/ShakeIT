@@ -13,6 +13,7 @@
 		45CE3D221DB566FA00395991 /* MenuButtonsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CE3D1E1DB566FA00395991 /* MenuButtonsFactory.swift */; };
 		45CE3D251DB5671800395991 /* LineDrawer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CE3D241DB5671800395991 /* LineDrawer.swift */; };
 		45CE3D261DB5671800395991 /* LineDrawer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CE3D241DB5671800395991 /* LineDrawer.swift */; };
+		BF9FB81F1DBE0269001828CE /* LongPressDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9FB81E1DBE0269001828CE /* LongPressDelegate.swift */; };
 		BFAB5A941DA2D32300274BB5 /* MotionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAB5A931DA2D32300274BB5 /* MotionHandler.swift */; };
 		BFACC34E1D971CD000F20090 /* ShakeIT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFFAE6781D96E09B00313647 /* ShakeIT.framework */; };
 		BFACC34F1D971CD000F20090 /* ShakeIT.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BFFAE6781D96E09B00313647 /* ShakeIT.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -79,6 +80,7 @@
 		45CE3D1D1DB566FA00395991 /* MenuButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuButton.swift; sourceTree = "<group>"; };
 		45CE3D1E1DB566FA00395991 /* MenuButtonsFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuButtonsFactory.swift; sourceTree = "<group>"; };
 		45CE3D241DB5671800395991 /* LineDrawer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineDrawer.swift; sourceTree = "<group>"; };
+		BF9FB81E1DBE0269001828CE /* LongPressDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LongPressDelegate.swift; path = "Utils/LongPress Delegate/LongPressDelegate.swift"; sourceTree = "<group>"; };
 		BFAB5A931DA2D32300274BB5 /* MotionHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MotionHandler.swift; path = Utils/Motion/MotionHandler.swift; sourceTree = "<group>"; };
 		BFACC3531D97BF0500F20090 /* NoteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteViewController.swift; sourceTree = "<group>"; };
 		BFFAE6781D96E09B00313647 /* ShakeIT.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ShakeIT.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -169,9 +171,18 @@
 			path = Drawing;
 			sourceTree = "<group>";
 		};
+		BF9FB81D1DBE024B001828CE /* Long press deleagte */ = {
+			isa = PBXGroup;
+			children = (
+				BF9FB81E1DBE0269001828CE /* LongPressDelegate.swift */,
+			);
+			name = "Long press deleagte";
+			sourceTree = "<group>";
+		};
 		BFAB5A911DA2D30400274BB5 /* Utlis */ = {
 			isa = PBXGroup;
 			children = (
+				BF9FB81D1DBE024B001828CE /* Long press deleagte */,
 				BFAB5A921DA2D30A00274BB5 /* Motion */,
 			);
 			name = Utlis;
@@ -390,7 +401,7 @@
 					};
 					BFFAE6951D96E0AD00313647 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = D77EL94EMV;
+						DevelopmentTeam = XY8ZXPE8XE;
 						ProvisioningStyle = Automatic;
 					};
 					BFFAE6A81D96E0AD00313647 = {
@@ -473,6 +484,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF9FB81F1DBE0269001828CE /* LongPressDelegate.swift in Sources */,
 				BFAB5A941DA2D32300274BB5 /* MotionHandler.swift in Sources */,
 				BFACC3541D97BF0500F20090 /* NoteViewController.swift in Sources */,
 				45CE3D1F1DB566FA00395991 /* MenuButton.swift in Sources */,
@@ -732,7 +744,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = D77EL94EMV;
+				DEVELOPMENT_TEAM = XY8ZXPE8XE;
 				INFOPLIST_FILE = ExampleApplication/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.shakeit.ExampleApplication;
@@ -746,7 +758,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = D77EL94EMV;
+				DEVELOPMENT_TEAM = XY8ZXPE8XE;
 				INFOPLIST_FILE = ExampleApplication/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.shakeit.ExampleApplication;

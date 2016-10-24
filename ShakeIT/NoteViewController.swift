@@ -13,6 +13,7 @@ class NoteViewController: UIViewController
     
     var allConstraints = [NSLayoutConstraint]()
     var buttonsMenu = [MenuButton]()
+    var longPressDelegate: LongPressDelegate!
     
     lazy var menuButton: MenuButton = {
         let menuBlock = { () -> Void in
@@ -33,6 +34,11 @@ class NoteViewController: UIViewController
     
     let lineDrawer = LineDrawer()
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.longPressDelegate =  LongPressDelegate(viewContext: self.view)
+    }
+    
     override func viewWillAppear(_ animated: Bool)
     {
         super.viewWillAppear(animated)
@@ -46,19 +52,21 @@ class NoteViewController: UIViewController
         setupMailButton()
         setupEditButton()
         setupSaveButton()
+        addLongPressGestureRecognizer()
     }
-    
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?)
     {
         let touch = touches.first
         lineDrawer.makeStartPoint(startPoint: (touch?.location(in: self.view))!)
+        self.view.endEditing(true)
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?)
     {
         lineDrawer.drawLineForView(view: view, point: (touches.first?.location(in: self.view))!)
     }
+
 
     private func setBlackBackgroundWithOpacity()
     {
@@ -107,45 +115,46 @@ class NoteViewController: UIViewController
     }
     
     //MARK: - setup menu buttons
-    func setupMailButton()
+    private func setupMailButton()
     {
         let mailBlock = { () -> Void in
             
         }
         
-        mailButton = MenuButtonsFactory.createMenuButton(forSuperview: self.view, type: .mail, actionBlock: mailBlock)
-        mailButton.frame.origin = CGPoint(x:self.menuButton.frame.minX, y:bottomSpace())
-        self.view.addSubview(mailButton)
-        buttonsMenu.append(mailButton)
+        mailButton = createMenuButton(type: .mail, actionBlock: mailBlock)
     }
     
-    func setupEditButton()
+    private func setupEditButton()
     {
         let editBlock = { () -> Void in
             
         }
-        editButton = MenuButtonsFactory.createMenuButton(forSuperview: self.view, type: .edit, actionBlock: editBlock)
-        editButton.frame.origin = CGPoint(x:self.menuButton.frame.minX, y:bottomSpace())
-        self.view.addSubview(editButton)
-        buttonsMenu.append(editButton)
+        editButton = createMenuButton(type: .edit, actionBlock: editBlock)
     }
     
-    func setupSaveButton()
+    private func setupSaveButton()
     {
         let saveBlock = { () -> Void in
             
         }
-        saveButton = MenuButtonsFactory.createMenuButton(forSuperview: self.view, type: .save, actionBlock: saveBlock)
-        saveButton.frame.origin = CGPoint(x:self.menuButton.frame.minX, y:bottomSpace())
-        self.view.addSubview(saveButton)
-        buttonsMenu.append(saveButton)
+        saveButton = createMenuButton(type: .save, actionBlock: saveBlock)
     }
     
-    func bottomSpace() -> CGFloat
+    private func createMenuButton(type: MenuButtonType, actionBlock: @escaping () -> Void) -> MenuButton
+    {
+        let temporaryMenuButton = MenuButtonsFactory.createMenuButton(forSuperview: self.view, type: type, actionBlock: actionBlock)
+        temporaryMenuButton.frame.origin = CGPoint(x:self.menuButton.frame.minX, y:bottomSpace())
+        self.view.addSubview(temporaryMenuButton)
+        buttonsMenu.append(temporaryMenuButton)
+        return temporaryMenuButton
+    }
+    
+    private func bottomSpace() -> CGFloat
     {
         return CGFloat(self.view.frame.height + CGFloat(70))
     }
     
+    //MARK: Private methods
     private func takeScreenshotOfCurrentView()
     {
         let view = UIApplication.shared.keyWindow
@@ -154,6 +163,14 @@ class NoteViewController: UIViewController
         let image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
          UIImageWriteToSavedPhotosAlbum(image!, nil, nil, nil)
+    }
+    
+    
+    private func addLongPressGestureRecognizer()
+    {
+         let longPressRecognizer = UILongPressGestureRecognizer()
+        longPressRecognizer.delegate = longPressDelegate
+        self.view.addGestureRecognizer(longPressRecognizer)
     }
 
 }
